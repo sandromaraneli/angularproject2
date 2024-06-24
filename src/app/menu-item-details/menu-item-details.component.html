@@ -1,0 +1,11 @@
+<div *ngIf="menuItem">
+    <div class="menu-item-details">
+      <h2>{{ menuItem.name }}</h2>
+      <p><strong>Price:</strong> {{ menuItem.price }}</p>
+      <p><strong>Vegetarian:</strong> {{ menuItem.vegetarian ? 'Yes' : 'No' }}</p>
+      <p><strong>Contains Nuts:</strong> {{ menuItem.nuts ? 'Yes' : 'No' }}</p>
+      <p><strong>Spiciness Level:</strong> {{ menuItem.spiciness }}</p>
+      <img [src]="menuItem.image" alt="{{ menuItem.name }}" />
+    </div>
+  </div>
+  

@@ -1,0 +1,30 @@
+<div>
+  <h3>Menu</h3>
+  <div class="filter-container">
+    <label for="minPrice">Min Price:</label>
+    <input type="number" [(ngModel)]="minPrice" id="minPrice">
+    <label for="maxPrice">Max Price:</label>
+    <input type="number" [(ngModel)]="maxPrice" id="maxPrice">
+    <label for="searchId">ID:</label>
+    <input type="number" [(ngModel)]="searchId" id="searchId">
+    <button (click)="filterMenuItems()">Filter</button>
+  </div>
+  <div *ngIf="loading" class="loading">Loading...</div>
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+  <div *ngIf="menuItems.length">
+    <ul>
+      <li *ngFor="let menuItem of menuItems">
+        <a [routerLink]="['/menu-item', menuItem.id]">{{ menuItem.name }}</a>
+        <p><strong>Price:</strong> {{ menuItem.price }}</p>
+        <p><strong>Spiciness Level:</strong> {{ menuItem.spiciness }}</p>
+        <img [src]="menuItem.image" alt="{{ menuItem.name }}" width="100">
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="!menuItems.length && !loading && !errorMessage">
+    <p>No menu items available.</p>
+  </div>
+</div>
+
+  
+  

@@ -1,0 +1,15 @@
+.menu-item-details {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .menu-item-details h2 {
+    margin-top: 0;
+  }
+  
+  .menu-item-details img {
+    max-width: 100%;
+    height: auto;
+  }
+  
